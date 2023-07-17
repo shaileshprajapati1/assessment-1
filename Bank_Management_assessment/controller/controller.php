@@ -1,11 +1,12 @@
 
 <?php
+session_start();
 require_once("model/model.php");
 class controller  extends model
 {
 
     public function __construct(public $baseURL = null)
-    {
+    { ob_start();
         parent::__construct();
         $this->baseURL = "http://localhost/assessment-1/assessment-1/Bank_Management_assessment/";
 
@@ -41,11 +42,15 @@ class controller  extends model
                     include_once("views/homepage.php");
                     include_once("views/footer.php");
                     break;
+                case '/logout':
+                    session_destroy();
+                    header("location:login");
+                    break;
                 case '/login':
                     include_once("views/login.php");
                     if(isset($_POST['login'])){
                         $LoginRes = $this->Login($_POST['username'],$_POST['password']);
-                        print_r($LoginRes);
+                        // print_r($LoginRes['Data']);
                         if($LoginRes["Code"] == 1 ){
                             $_SESSION['userdata'] = $LoginRes["Data"];
                             if($LoginRes['Data']->role_id == 1 ){
@@ -54,7 +59,9 @@ class controller  extends model
                                 header("location:customer");
                             }
                         } else {
-                            echo "Invalid User";
+                            echo  "<script>
+                            alert('Invalid User');
+                            </script>";
                         }
                     }
                     break;
@@ -134,6 +141,7 @@ class controller  extends model
         } else {
             header("location:home");
         }
+        ob_flush();
     }
 }
 

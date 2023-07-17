@@ -45,6 +45,9 @@
                     <li class="nav-item @@about__active">
                         <a class="nav-link" href="">total amounts in bank</a>
                     </li> 
+                    <li class="nav-item @@about__active">
+                        <a class="nav-link" href="logout">logout</a>
+                    </li> 
                     <!-- <li class="nav-item dropdown @@pages__active">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

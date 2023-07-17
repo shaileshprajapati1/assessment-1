@@ -37,12 +37,14 @@ class model{
         return $ResponceData;
 
     }
-    public function Login($pass,$uname){
+    public function Login($uname,$pass){
         $SQL = " SELECT * FROM users WHERE password = '$pass' AND (username = '$uname' OR phone = '$uname' OR email = '$uname')";
         // echo $SQL;
         $SQLEx = $this->connection->query($SQL);
+        // print_r($SQLEx);
         if($SQLEx->num_rows>0){
             $FetchData = $SQLEx->fetch_object();
+        
             $ResponceData['Code'] = "1";
             $ResponceData['Mag'] = "Success";
             $ResponceData['Data'] = $FetchData;
