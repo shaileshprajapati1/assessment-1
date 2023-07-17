@@ -36,7 +36,7 @@
                     <li class="nav-item @@about__active">
                         <a class="nav-link" href="services">Services</a>
                     </li> 
-                    <li class="nav-item dropdown @@pages__active">
+                    <!-- <li class="nav-item dropdown @@pages__active">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Menu
@@ -45,7 +45,7 @@
                             <a class="dropdown-item" href="banker">Banker</a>
                             <a class="dropdown-item" href="customer">customer</a>
                         </div>
-                    </li>
+                    </li> -->
                     <li class="nav-item @@contact__active">
                         <a class="nav-link" href="contact">Contact</a>
                     </li>

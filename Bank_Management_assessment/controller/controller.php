@@ -6,7 +6,7 @@ class controller
 
     public function __construct(public $baseURL = null)
     {
-        $this->baseURL = "http://localhost/PHP/php/Bank_Management_assessment/";
+        $this->baseURL = "http://localhost/assessment-1/assessment-1/Bank_Management_assessment/";
 
         if (isset($_SERVER['PATH_INFO'])) {
             switch ($_SERVER['PATH_INFO']) {
@@ -39,6 +39,12 @@ class controller
                     include_once("views/customer/customerheader.php");
                     include_once("views/homepage.php");
                     include_once("views/footer.php");
+                    break;
+                case '/login':
+                   include_once("views/login.php");
+                    break;
+                case '/register':
+                   include_once("views/register.php");
                     break;
 
                 default:
