@@ -17,9 +17,25 @@ class model{
         // echo $ErrorMsg;
         }
     }
-    public function Insert(){
-        $SQL = "";
-        $SQLEx = "" ;
+    public function Insert($tbl,$data){
+        $clm = implode(",",array_keys($data));
+        $val = implode("','",$data);
+        $SQL = " INSERT INTO $tbl ($clm) VALUES ('$val') ";
+        // echo $SQL;
+        $SQLEx = $this->connection->query($SQL);
+        // print_r($SQLEx);
+        if($SQLEx >0){
+            $ResponceData['Code'] = "1";
+            $ResponceData['Mag'] = "Success";
+            $ResponceData['Data'] = "1";
+        } else {
+            $ResponceData['Code'] = "0";
+            $ResponceData['Mag'] = "Try Again";
+            $ResponceData['Data'] = "0";
+
+        }
+        return $ResponceData;
+
     }
     // public function Login(){
     //     $SQL = "";
