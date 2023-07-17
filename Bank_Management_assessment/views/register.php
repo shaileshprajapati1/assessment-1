@@ -11,7 +11,7 @@
 
 <body>
     <main>
-        <form method="post"><a href="home">home</a>
+        <form method="post" enctype="multipart/form-data"><a href="home">home</a>
             <h1>Sign Up</h1>
             <div>
                 <label for="fullname">Fullname:</label>
@@ -42,7 +42,12 @@
                 <input type="radio" name="gender" id="Male" value="Male"><label for="Male" style="display: inline">Male</label>
                 <input type="radio" name="gender" id="Female" value="Female"><label for="Female" style="display: inline;">Female</label>
             </div>
-
+            <div>
+                <label for="profile_pic">Proflie_pic:</label>
+               <input type="file" name="profile_pic" id="profile_pic">
+            </div>
+            
+           
             <div>
                 <label id="acoount">Account Type:</label>
                 <select name="account" id="acoount" required>

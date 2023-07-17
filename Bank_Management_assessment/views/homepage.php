@@ -112,25 +112,25 @@
                             <span class="fa fa-desktop"></span>
                             <h4><a href="#feature" class="title-head">Online Business</a></h4>
                             <p class="para">Vivamus a ligula quam. Duis feugiat tortor sed Ut blandit. Duis feugiat tortor sed.</p>
-                            <a href="about.html" class="action-button btn mt-3">Read more</a>
+                            <a href="about" class="action-button btn mt-3">Read more</a>
                         </div>
                         <div class="grids-1 grids-effect-2">
                             <span class="fa fa-thumbs-o-up"></span>
                             <h4><a href="#feature" class="title-head">Business Plan</a></h4>
                             <p class="para">Vivamus a ligula quam. Duis feugiat tortor sed  Ut blandit. Duis feugiat tortor sed.</p>
-                            <a href="about.html" class="action-button btn mt-3">Read more</a>
+                            <a href="about" class="action-button btn mt-3">Read more</a>
                         </div>
                             <div class="grids-1 grids-effect">
                                 <span class="fa fa-mobile"></span>
                                 <h4><a href="#feature" class="title-head">Mobile Bank</a></h4>
                                 <p class="para">Vivamus a ligula quam. Duis feugiat tortor sed Ut blandit. Duis feugiat tortor sed.</p>
-                                <a href="about.html" class="action-button btn mt-3">Read more</a>
+                                <a href="about" class="action-button btn mt-3">Read more</a>
                             </div>
                             <div class="grids-1 grids-effect-2">
                                 <span class="fa fa-money"></span>
                                 <h4><a href="#feature" class="title-head">Online Deposit</a></h4>
                                 <p class="para">Vivamus a ligula quam. Duis feugiat tortor sed  Ut blandit. Duis feugiat tortor sed.</p>
-                                <a href="about.html" class="action-button btn mt-3">Read more</a>
+                                <a href="about" class="action-button btn mt-3">Read more</a>
                             </div>  
                   </div>
         </div>
@@ -192,7 +192,7 @@
                     <div class="col-lg-4 col-md-6 editContent jst-coloums">
                         <div class="column color-2">
                             <span class="fa fa-handshake-o" aria-hidden="true"></span>
-                        <h4><a href="about.html" class=" editContent">Innovative Solutions</a></h4>
+                        <h4><a href="about" class=" editContent">Innovative Solutions</a></h4>
                         <p class="para editContent">Assumenda temporibus quidem ipsam. Voluptate fuga corporis iusto similique voluptates sint quibusdam.</p>
                         
                     </div>
@@ -201,7 +201,7 @@
                     <div class="col-lg-4 col-md-6 editContent jst-coloums">
                         <div class="column color-2">
                             <span class="fa fa-shield" aria-hidden="true"></span>
-                        <h4><a href="about.html" class=" editContent">Best Support</a></h4>
+                        <h4><a href="about" class=" editContent">Best Support</a></h4>
                         <p class="para editContent">Assumenda temporibus quidem ipsam. Voluptate fuga corporis iusto similique voluptates sint quibusdam.</p>
                         
                     </div>
@@ -210,7 +210,7 @@
                     <div class="col-lg-4 col-md-6 editContent jst-coloums">
                         <div class="column color-2">
                             <span class="fa fa-history" aria-hidden="true"></span>
-                        <h4><a href="about.html" class=" editContent">On Time Services
+                        <h4><a href="about" class=" editContent">On Time Services
                         </a></h4>
                         <p class="para editContent">Assumenda temporibus quidem ipsam. Voluptate fuga corporis iusto similique voluptates sint quibusdam.</p>
        
@@ -235,17 +235,17 @@
                 <div class="gallery-image row">
                   <div class="img-box col-lg-4 col-md-6">
                     <img src=" <?php echo $this->baseURL ; ?>assets/images/b3.jpg" alt="product" class="img-responsive ">
-                    <h5 class="my-2"><a href="about.html">Money Protection</a></h5>
+                    <h5 class="my-2"><a href="about">Money Protection</a></h5>
                     <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet itaque labor.</p>
                   </div>
                   <div class="img-box col-lg-4 col-md-6">
                     <img src=" <?php echo $this->baseURL ; ?>assets/images/b1.jpg" alt="product" class="img-responsive ">
-                    <h5 class="my-2"><a href="about.html">Growth Guranteed</a></h5>
+                    <h5 class="my-2"><a href="about">Growth Guranteed</a></h5>
                     <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet itaque labor.</p>
                   </div>
                   <div class="img-box col-lg-4 col-md-6">
                     <img src=" <?php echo $this->baseURL ; ?>assets/images/b2.jpg" alt="product" class="img-responsive ">
-                    <h5 class="my-2"><a href="about.html">Business Support</a></h5>
+                    <h5 class="my-2"><a href="about">Business Support</a></h5>
                     <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet itaque labor.</p>
                     </div>
                   </div>

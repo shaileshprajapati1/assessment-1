@@ -1,11 +1,12 @@
 
 <?php
-
-class controller
+require_once("model/model.php");
+class controller  extends model
 {
 
     public function __construct(public $baseURL = null)
     {
+        parent::__construct();
         $this->baseURL = "http://localhost/assessment-1/assessment-1/Bank_Management_assessment/";
 
         if (isset($_SERVER['PATH_INFO'])) {
@@ -41,10 +42,25 @@ class controller
                     include_once("views/footer.php");
                     break;
                 case '/login':
-                   include_once("views/login.php");
+                    include_once("views/login.php");
                     break;
                 case '/register':
-                   include_once("views/register.php");
+                    include_once("views/register.php");
+                    if (isset($_POST['register'])) {
+                        $UploadFile = "uploads/";
+                        $Filename = $UploadFile . ($_FILES["profile_pic"]["name"]);
+                        $uploadOk = 1;
+                        $imageFileType = strtolower(pathinfo($Filename, PATHINFO_EXTENSION));
+                        echo "<pre>";
+                        print_r($_FILES);
+                        echo "</pre>";
+
+                        array_pop($_POST);
+                        array_pop($_POST);
+                        echo "<pre>";
+                        print_r($_POST);
+                        echo "</pre>";
+                    }
                     break;
 
                 default:
