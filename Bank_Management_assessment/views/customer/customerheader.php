@@ -39,6 +39,9 @@
                     <li class="nav-item @@about__active">
                         <a class="nav-link" href="">View Balance</a>
                     </li> 
+                    <li class="nav-item @@about__active">
+                        <a class="nav-link" href="logout">logout</a>
+                    </li> 
                    
                 </ul>
             </div>
