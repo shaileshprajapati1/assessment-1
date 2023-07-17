@@ -1,3 +1,12 @@
+
+<?php
+if(!isset($_SESSION['userdata'])){
+    header("location:login");
+}
+
+?>
+
+
 <!doctype html>
 <html lang="en">
   <head>
