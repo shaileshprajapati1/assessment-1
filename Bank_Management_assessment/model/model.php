@@ -37,10 +37,23 @@ class model{
         return $ResponceData;
 
     }
-    // public function Login(){
-    //     $SQL = "";
-    //     $SQLEx = "" ;
-    // }
+    public function Login($pass,$uname){
+        $SQL = " SELECT * FROM users WHERE password = '$pass' AND (username = '$uname' OR phone = '$uname' OR email = '$uname')";
+        // echo $SQL;
+        $SQLEx = $this->connection->query($SQL);
+        if($SQLEx->num_rows>0){
+            $FetchData = $SQLEx->fetch_object();
+            $ResponceData['Code'] = "1";
+            $ResponceData['Mag'] = "Success";
+            $ResponceData['Data'] = $FetchData;
+        } else {
+            $ResponceData['Code'] = "0";
+            $ResponceData['Mag'] = "Try Again";
+            $ResponceData['Data'] = "0";
+
+        }
+         return $ResponceData;
+    }
     // public function Select(){
     //     $SQL = "";
     //     $SQLEx = "" ;

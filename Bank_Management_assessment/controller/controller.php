@@ -43,6 +43,20 @@ class controller  extends model
                     break;
                 case '/login':
                     include_once("views/login.php");
+                    if(isset($_POST['login'])){
+                        $LoginRes = $this->Login($_POST['username'],$_POST['password']);
+                        print_r($LoginRes);
+                        if($LoginRes["Code"] == 1 ){
+                            $_SESSION['userdata'] = $LoginRes["Data"];
+                            if($LoginRes['Data']->role_id == 1 ){
+                                header("location:banker");
+                            } else {
+                                header("location:customer");
+                            }
+                        } else {
+                            echo "Invalid User";
+                        }
+                    }
                     break;
                 case '/register':
                     include_once("views/register.php");
