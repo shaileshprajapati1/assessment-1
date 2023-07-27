@@ -38,6 +38,11 @@ class controller  extends model
                     include_once("views/homepage.php");
                     include_once("views/footer.php");
                     break;
+                case '/addcustomer':
+                    // include_once("views/banker/bankerheader.php");
+                    include_once("views/banker/addcustomer.php");
+                    
+                    break;
                 case '/customer':
                     include_once("views/customer/customerheader.php");
                     include_once("views/homepage.php");

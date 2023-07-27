@@ -40,7 +40,7 @@ if(!isset($_SESSION['userdata'])){
                         <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item @@about__active">
-                        <a class="nav-link" href="">add customer</a>
+                        <a class="nav-link" href="addcustomer">add customer</a>
                     </li> 
                     <li class="nav-item @@about__active">
                         <a class="nav-link" href="">view customer</a>
