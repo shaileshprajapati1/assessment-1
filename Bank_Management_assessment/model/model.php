@@ -5,7 +5,7 @@ class model{
     public function __construct(protected $connection = null)
     {
         try {
-          $this->connection = new mysqli("localhost","root","","task");
+          $this->connection = new mysqli("localhost","root","","bankassessment");
         } catch (\Exception $e) {
         //    $ErrorMsg = $e->getMessage();
         $ErrorMsg = PHP_EOL."Error Date Time>>>".date('d-m-Y h:i:s A').PHP_EOL."Error Msg>>>".$e->getMessage().PHP_EOL;

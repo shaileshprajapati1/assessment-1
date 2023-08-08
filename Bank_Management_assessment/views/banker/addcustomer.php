@@ -13,72 +13,78 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="formheader  mt-2 text-center ">
-            <h2><b>Customer Form</b></h2>
+    <div class="container "></div>
+    <div class="formheader text-center bg-light text-dark mt-2 ">
+        <h2><b>Customer Form</b></h2>
+    </div>
+    <form class="row g-3 bg-light text-dark" method="post" enctype="multipart/form-data">
+        <div class="col-md-5 offset-3">
+            <label for="fullname" class="form-label">FullName:</label>
+            <input type="text" name="fullname" class="form-control" id="fullname" placeholder="Enter FullName">
         </div>
-        <form class="row g-3" method="post" enctype="multipart/form-data">
-            <div class="col-md-5 offset-3">
-                <label for="fullname" class="form-label">FullName:</label>
-                <input type="text" name="fullname" class="form-control" id="fullname" placeholder="Enter FullName">
-            </div>
-            <div class="col-md-5 offset-3">
-                <label for="username" class="form-label">Username:</label>
-                <input type="text" name="username" class="form-control" id="username" placeholder="Enter username">
-            </div>
-            <div class="col-md-5 offset-3">
-                <label for="password" class="form-label">Password:</label>
-                <input type="password" name="password" class="form-control" id="password" placeholder="Enter password">
-            </div>
-            <div class="col-md-5 offset-3">
-                <label for="email" class="form-label">Email:</label>
-                <input type="email" name="email" class="form-control" id="email" placeholder="Enter email">
-            </div>
-            <div class="col-md-5 offset-3">
-                <label for="dob" class="form-label">Date oF Birth:</label>
-                <input type="date" name="dob" class="form-control" id="dob" placeholder="Enter Date of Birth">
-            </div>
-            <div class="col-md-5 offset-3">
-                <label for="phone" class="form-label">phone:</label>
-                <input type="tel" name="phone" class="form-control" id="phone" placeholder="Enter phone">
-            </div>
-            <div class="col-md-5 offset-3">
-                <label for="gender">Gender:</label><br>
-                <label for="Male">Male</label> <input type="radio" value="Male" name="gender" id="Male">
-                <label for="Female">Female</label> <input type="radio" value="Female" name="gender" id="Female">
-                <label for="Other">Other</label> <input type="radio" value="Other" name="gender" id="Other">
-            </div>
-            <div class="col-md-5 offset-3">
-                <label for="Adhar" class="form-label">Aadhar No:</label>
-                <input type="tel" minlength="12" maxlength="12" name="Adhar" class="form-control" id="Adhar" placeholder="XXXX-XXX-XXXX">
-            </div>
-            <div class="col-md-5 offset-3">
-                <label for="address" class="form-label">Address :</label>
-                <textarea id="address" name="address" class="form-control" rows="2" cols="40"></textarea>
-                <!-- <input type="textarea" name="address" class="form-control" id="address"  > -->
-            </div>
-            <div class="col-md-5 offset-3">
-                <label for="">Account Type:</label>
-                <select name="" id="">
-                    <option value="selected"> Select Account Type</option>
-                    <option value="saving"> Saving Account</option>
-                    <option value="current"> Current Account</option>
-                </select>
-            </div>
-            <div class="col-md-5 offset-3">
-                <label for="accountno" class="form-label">Account No:</label>
-                <input type="number" minlength="16" maxlength="16" name="accountno" class="form-control" id="accountno">
-            </div>
-            <div class="col-md-5 offset-3">
-                <label for="openingbal" class="form-label">Opening Balance:</label>
-                <input type="number" minlength="16" maxlength="16" name="openingbal" class="form-control" id="openingbal">
-            </div>
+        <div class="col-md-5 offset-3">
+            <label for="username" class="form-label">Username:</label>
+            <input type="text" name="username" class="form-control" id="username" placeholder="Enter username">
+        </div>
+        <div class="col-md-5 offset-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" name="password" class="form-control" id="password" placeholder="Enter password">
+        </div>
+        <div class="col-md-5 offset-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" name="email" class="form-control" id="email" placeholder="Enter email">
+        </div>
+        <div class="col-md-5 offset-3">
+            <label for="dob" class="form-label">Date oF Birth:</label>
+            <input type="date" name="dob" class="form-control" id="dob" placeholder="Enter Date of Birth">
+        </div>
+        <div class="col-md-5 offset-3">
+            <label for="phone" class="form-label">phone:</label>
+            <input type="tel" name="phone" minlength="10" maxlength="10" class="form-control" id="phone" placeholder="Enter phone">
+        </div>
+        <div class="col-md-5 offset-3">
+            <label for="gender">Gender:</label><br>
+            <label for="Male">Male</label> <input type="radio" value="Male" name="gender" id="Male">
+            <label for="Female">Female</label> <input type="radio" value="Female" name="gender" id="Female">
+            <label for="Other">Other</label> <input type="radio" value="Other" name="gender" id="Other">
+        </div>
+        <div class="col-md-5 offset-3">
+            <label for="Adhar" class="form-label">Aadhar No:</label>
+            <input type="tel" minlength="12" maxlength="12" name="Adhar" class="form-control" id="Adhar" placeholder="Enter Aadhar No">
+        </div>
+        <div class="col-md-5 offset-3">
+            <label class="input-group-text" for="profile_pic"></label>
+            <input type="file" class="form-control" id="profile_pic" name="profile_pic">
+        </div>
+        <div class="col-md-5 offset-3">
+            <label for="address" class="form-label">Address :</label>
+            <textarea id="address" name="address" class="form-control" rows="2" cols="40"></textarea>
+            <!-- <input type="textarea" name="address" class="form-control" id="address"  > -->
+        </div>
+
+        <div class="col-md-5 offset-3">
+            <label for="">Account Type:</label>
+            <select name="" id="">
+                <option value="selected"> Select Account Type</option>
+                <option value="saving"> Saving Account</option>
+                <option value="current"> Current Account</option>
+            </select>
+        </div>
+        <div class="col-md-5 offset-3">
+            <label for="accountno" class="form-label">Account No:</label>
+            <input type="number" minlength="16" maxlength="16" name="accountno" class="form-control" id="accountno">
+        </div>
+        <div class="col-md-5 offset-3">
+            <label for="openingbal" class="form-label">Opening Balance:</label>
+            <input type="number" name="openingbal" class="form-control" id="openingbal">
+        </div>
 
 
-            <div class="col-md-6 offset-5">
-                <button type="submit" name="add" id="add" class="btn btn-primary">Add Form</button>
-            </div>
-        </form>
+        <div class="col-md-5 offset-4">
+            <button type="submit" name="add" id="add" class="btn btn-primary">Customer Form</button>
+            <button type="reset" class="btn btn-danger ">Clear</button>
+        </div>
+    </form>
     </div>
 
 
