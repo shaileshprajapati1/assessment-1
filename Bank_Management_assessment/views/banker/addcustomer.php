@@ -14,49 +14,49 @@
 
 <body>
     <div class="container">
-        <div class="formheader mb-3 mt-3 text-center"><b>Customer Form</b></div>
-        <form class="row g-3">
-            <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail4">
+        <div class="formheader  mt-2 text-center "><h2><b>Customer Form</b></h2></div>
+        <form class="row g-3" method="post" enctype="multipart/form-data">
+            <div class="col-md-5 offset-3">
+                <label for="fullname" class="form-label">FullName:</label>
+                <input type="text" name="fullname" class="form-control" id="fullname" placeholder="Enter FullName">
             </div>
-            <div class="col-md-6">
-                <label for="inputPassword4" class="form-label">Password</label>
-                <input type="password" class="form-control" id="inputPassword4">
+            <div class="col-md-5 offset-3">
+                <label for="username" class="form-label">Username:</label>
+                <input type="text" name="username" class="form-control" id="username" placeholder="Enter username">
             </div>
-            <div class="col-12">
-                <label for="inputAddress" class="form-label">Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            <div class="col-md-5 offset-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" name="email" class="form-control" id="email" placeholder="Enter email">
             </div>
-            <div class="col-12">
-                <label for="inputAddress2" class="form-label">Address 2</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            <div class="col-md-5 offset-3">
+                <label for="dob" class="form-label">Date oF Birth:</label>
+                <input type="date" name="dob" class="form-control" id="dob" placeholder="Enter Date of Birth">
             </div>
-            <div class="col-md-6">
-                <label for="inputCity" class="form-label">City</label>
-                <input type="text" class="form-control" id="inputCity">
+            <div class="col-md-5 offset-3">
+                <label for="phone" class="form-label">phone:</label>
+                <input type="tel" name="phone" class="form-control" id="phone" placeholder="Enter phone">
             </div>
-            <div class="col-md-4">
-                <label for="inputState" class="form-label">State</label>
-                <select id="inputState" class="form-select">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                </select>
+            <div class="col-md-5 offset-3">
+                <label for="Adhar" class="form-label">Aadhar No:</label>
+                <input type="tel" minlength="12" maxlength="12" name="Adhar" class="form-control" id="Adhar" placeholder="XXXX-XXX-XXXX" >
             </div>
-            <div class="col-md-2">
-                <label for="inputZip" class="form-label">Zip</label>
-                <input type="text" class="form-control" id="inputZip">
+            <div class="col-md-5 offset-3">
+                <label for="address" class="form-label">Address :</label>
+                <textarea id="address" name="address" class="form-control" rows="2" cols="40"></textarea>
+                <!-- <input type="textarea" name="address" class="form-control" id="address"  > -->
             </div>
-            <div class="col-12">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                        Check me out
-                    </label>
-                </div>
+            <div class="col-md-5 offset-3">
+                <label for="accountno" class="form-label">Account No:</label>
+                <input type="number" minlength="16" maxlength="16" name="accountno" class="form-control" id="accountno"  >
             </div>
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">Sign in</button>
+            <div class="col-md-5 offset-3">
+                <label for="openingbal" class="form-label">Opening Balance:</label>
+                <input type="number" minlength="16" maxlength="16" name="openingbal" class="form-control" id="openingbal"  >
+            </div>
+
+           
+            <div class="col-md-6 offset-5">
+                <button type="submit" name="add" id="add" class="btn btn-primary">Add Form</button>
             </div>
         </form>
     </div>
