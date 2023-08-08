@@ -14,7 +14,9 @@
 
 <body>
     <div class="container">
-        <div class="formheader  mt-2 text-center "><h2><b>Customer Form</b></h2></div>
+        <div class="formheader  mt-2 text-center ">
+            <h2><b>Customer Form</b></h2>
+        </div>
         <form class="row g-3" method="post" enctype="multipart/form-data">
             <div class="col-md-5 offset-3">
                 <label for="fullname" class="form-label">FullName:</label>
@@ -23,6 +25,10 @@
             <div class="col-md-5 offset-3">
                 <label for="username" class="form-label">Username:</label>
                 <input type="text" name="username" class="form-control" id="username" placeholder="Enter username">
+            </div>
+            <div class="col-md-5 offset-3">
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" name="password" class="form-control" id="password" placeholder="Enter password">
             </div>
             <div class="col-md-5 offset-3">
                 <label for="email" class="form-label">Email:</label>
@@ -37,8 +43,14 @@
                 <input type="tel" name="phone" class="form-control" id="phone" placeholder="Enter phone">
             </div>
             <div class="col-md-5 offset-3">
+                <label for="gender">Gender:</label><br>
+                <label for="Male">Male</label> <input type="radio" value="Male" name="gender" id="Male">
+                <label for="Female">Female</label> <input type="radio" value="Female" name="gender" id="Female">
+                <label for="Other">Other</label> <input type="radio" value="Other" name="gender" id="Other">
+            </div>
+            <div class="col-md-5 offset-3">
                 <label for="Adhar" class="form-label">Aadhar No:</label>
-                <input type="tel" minlength="12" maxlength="12" name="Adhar" class="form-control" id="Adhar" placeholder="XXXX-XXX-XXXX" >
+                <input type="tel" minlength="12" maxlength="12" name="Adhar" class="form-control" id="Adhar" placeholder="XXXX-XXX-XXXX">
             </div>
             <div class="col-md-5 offset-3">
                 <label for="address" class="form-label">Address :</label>
@@ -46,15 +58,23 @@
                 <!-- <input type="textarea" name="address" class="form-control" id="address"  > -->
             </div>
             <div class="col-md-5 offset-3">
+                <label for="">Account Type:</label>
+                <select name="" id="">
+                    <option value="selected"> Select Account Type</option>
+                    <option value="saving"> Saving Account</option>
+                    <option value="current"> Current Account</option>
+                </select>
+            </div>
+            <div class="col-md-5 offset-3">
                 <label for="accountno" class="form-label">Account No:</label>
-                <input type="number" minlength="16" maxlength="16" name="accountno" class="form-control" id="accountno"  >
+                <input type="number" minlength="16" maxlength="16" name="accountno" class="form-control" id="accountno">
             </div>
             <div class="col-md-5 offset-3">
                 <label for="openingbal" class="form-label">Opening Balance:</label>
-                <input type="number" minlength="16" maxlength="16" name="openingbal" class="form-control" id="openingbal"  >
+                <input type="number" minlength="16" maxlength="16" name="openingbal" class="form-control" id="openingbal">
             </div>
 
-           
+
             <div class="col-md-6 offset-5">
                 <button type="submit" name="add" id="add" class="btn btn-primary">Add Form</button>
             </div>
