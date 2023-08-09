@@ -46,7 +46,7 @@ if(!isset($_SESSION['userdata'])){
                         <a class="nav-link" href="">view customer</a>
                     </li>  -->
                     <li class="nav-item @@about__active">
-                        <a class="nav-link" href="">search customer</a>
+                        <a class="nav-link" href="searchcustomer">search customer</a>
                     </li> 
                     <li class="nav-item @@about__active">
                         <a class="nav-link" href="viewallcustomer">view all customer</a>
