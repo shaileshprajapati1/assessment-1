@@ -58,8 +58,15 @@ class controller  extends model
 
                     break;
                 case '/edit':
+                    $EditRes = $this->Select("users",array("role_id"=> "2","id"=>$_GET['userid']));
                     include_once("views/banker/editcustomer.php");
-
+                    if(isset($_POST['update'])){
+                        array_pop($_POST);
+                        echo "<pre>";
+                        print_r($_POST);
+                        echo "</pre>";
+                        
+                    }
 
                     break;
 
@@ -68,8 +75,9 @@ class controller  extends model
                     include_once("views/banker/addcustomer.php");
                     if (isset($_POST['add'])) {
                         array_pop($_POST);
-                        $targetDirectory = "uploads/"; // Specify the directory where you want to store uploaded files
-                        $targetFile = $targetDirectory . basename($_FILES["profile_pic"]["name"]);
+                        // $targetDirectory = "uploads/"; // Specify the directory where you want to store uploaded files
+                        $fileName = $_FILES["profile_pic"]["name"];
+                        $targetFile = "uploads/".$fileName;
                         $uploadOk = 1;
                         $fileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 
@@ -109,12 +117,12 @@ class controller  extends model
                             echo "Sorry, your file was not uploaded.";
                         } else {
                             if (move_uploaded_file($_FILES["profile_pic"]["tmp_name"], $targetFile)) {
-                                echo "The file " . basename($_FILES["profile_pic"]["name"]) . " has been uploaded.";
+                                echo "The file " .($_FILES["profile_pic"]["name"]) . " has been uploaded.";
                             } else {
                                 echo "Sorry, there was an error uploading your file.";
                             }
                         }
-                        $data = array_merge($_POST, array("profile_pic" => $targetFile));
+                        $data = array_merge($_POST, array("profile_pic" => $fileName));
                         // echo "<pre>";
                         // print_r($data);
                         // // print_r($_FILES);

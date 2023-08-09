@@ -20,46 +20,47 @@
     <form class="row g-3 bg-light text-dark" method="post" enctype="multipart/form-data">
         <div class="col-md-5 offset-3">
             <label for="fullname" class="form-label">FullName:</label>
-            <input type="text" name="fullname" class="form-control" id="fullname" >
+            <input type="text" name="fullname" class="form-control" id="fullname" value="<?php echo $EditRes["Data"][0]->fullname ; ?>" >
         </div>
         <div class="col-md-5 offset-3">
             <label for="username" class="form-label">Username:</label>
-            <input type="text" name="username" class="form-control" id="username" >
+            <input type="text" name="username" class="form-control" id="username" value="<?php echo $EditRes["Data"][0]->username ; ?>" >
         </div>
-        <div class="col-md-5 offset-3">
+        <!-- <div class="col-md-5 offset-3">
             <label for="password" class="form-label">Password:</label>
-            <input type="password" name="password" class="form-control" id="password" >
-        </div>
+            <input type="password" name="password" class="form-control" id="password" value="<?php echo $EditRes["Data"][0]->password ; ?>" >
+        </div> -->
         <div class="col-md-5 offset-3">
             <label for="email" class="form-label">Email:</label>
-            <input type="email" name="email" class="form-control" id="email" >
+            <input type="email" name="email" class="form-control" id="email" value="<?php echo $EditRes["Data"][0]->email ; ?>">
         </div>
         <div class="col-md-5 offset-3">
             <label for="dob" class="form-label">Date oF Birth:</label>
-            <input type="date" name="dob" class="form-control" id="dob" >
+            <input type="date" name="dob" class="form-control" id="dob" value="<?php echo $EditRes["Data"][0]->dob ; ?>" >
         </div>
         <div class="col-md-5 offset-3">
             <label for="phone" class="form-label">phone:</label>
-            <input type="tel" name="phone" minlength="10" maxlength="10" class="form-control" id="phone" >
+            <input type="tel" name="phone" minlength="10" maxlength="10" class="form-control" id="phone" value="<?php echo $EditRes["Data"][0]->phone ; ?>">
         </div>
         <div class="col-md-5 offset-3">
             <label for="gender">Gender:</label><br>
-            <label for="Male">Male</label> <input type="radio" value="Male" name="gender" id="Male">
-            <label for="Female">Female</label> <input type="radio" value="Female" name="gender" id="Female">
-            <label for="Other">Other</label> <input type="radio" value="Other" name="gender" id="Other">
+            <label for="Male">Male</label> <input type="radio" value="Male" name="gender" id="Male"<?php if($EditRes["Data"][0]->gender == "Male"){echo "checked";} ?>>
+            <label for="Female">Female</label> <input type="radio" value="Female" name="gender" id="Female"<?php if($EditRes["Data"][0]->gender == "Female"){echo "checked";} ?>>
+            <label for="Other">Other</label> <input type="radio" value="Other" name="gender" id="Other"<?php if($EditRes["Data"][0]->gender == "Other"){echo "checked";} ?>>
         </div>
         <div class="col-md-5 offset-3">
             <label for="adharno" class="form-label">Aadhar No:</label>
-            <input type="number" minlength="12" maxlength="12" name="adharno" class="form-control" id="adharno" >
+            <input type="number" minlength="12" maxlength="12" name="adharno" class="form-control" id="adharno" value="<?php echo $EditRes["Data"][0]->adharno ; ?>" >
         </div>
         <div class="col-md-5 offset-3">
             <label for="profile_pic">profile_pic</label>
+            <img src="uploads/<?php echo $EditRes["Data"][0]->profile_pic ; ?>" alt="" width="100px">
             <input type="file" class="form-control" id="" name="profile_pic">
             <!-- <input type="hidden" class="form-controls" id="profile_pic" name="profile_pic"> -->
         </div>
         <div class="col-md-5 offset-3">
             <label for="address" class="form-label">Address :</label>
-            <textarea id="address" name="address" class="form-control" rows="2" cols="40"></textarea>
+            <textarea id="address" name="address" class="form-control" rows="2" cols="40"  ><?php echo $EditRes["Data"][0]->address ; ?></textarea>
             <!-- <input type="textarea" name="address" class="form-control" id="address"  > -->
         </div>
 
@@ -67,23 +68,23 @@
             <label for="accounttype">Account Type:</label>
             <select name="accounttype" id="accounttype">
             <option disabled="disabled" selected="selected">Choose option</option>
-                <option value="saving"> Saving Account</option>
-                <option value="current"> Current Account</option>
+                <option value="saving" <?php if($EditRes["Data"][0]->accounttype == "saving"){echo "selected";} ?> > Saving Account</option>
+                <option value="current"<?php if($EditRes["Data"][0]->accounttype == "current"){echo "selected";} ?> > Current Account</option>
             </select>
         </div>
         <div class="col-md-5 offset-3">
             <label for="accountno" class="form-label">Account No:</label>
-            <input type="tel" minlength="16" maxlength="16" name="accountno" class="form-control" id="accountno">
+            <input type="text" minlength="16" maxlength="16" name="accountno" class="form-control" id="accountno" value="<?php echo $EditRes["Data"][0]->accountno ; ?>">
         </div>
         <div class="col-md-5 offset-3">
             <label for="openingbal" class="form-label">Opening Balance:</label>
-            <input type="tel" name="openingbal" class="form-control" id="openingbal">
+            <input type="number" name="openingbal" class="form-control" id="openingbal"value="<?php echo $EditRes["Data"][0]->openingbal ; ?>">
         </div>
 
 
         <div class="col-md-5 offset-4">
             <button type="submit" name="update" id="update" class="btn btn-primary">Update Form</button>
-            <button type="reset" class="btn btn-danger ">Cancel</button>
+            <!-- <button type="reset" class="btn btn-danger ">Cancel</button> -->
         </div>
     </form>
 
