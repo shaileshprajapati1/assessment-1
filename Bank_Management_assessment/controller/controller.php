@@ -48,6 +48,13 @@ class controller  extends model
               
                    
                     break;
+                case '/totalamount':
+                    include_once("views/banker/bankerheader.php");
+                    include_once("views/banker/totalamount.php");
+              
+                   
+                    break;
+                
                 case '/addcustomer':
                     // include_once("views/banker/bankerheader.php");
                     include_once("views/banker/addcustomer.php");

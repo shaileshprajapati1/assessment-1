@@ -45,14 +45,15 @@ if(!isset($_SESSION['userdata'])){
                     <!-- <li class="nav-item @@about__active">
                         <a class="nav-link" href="">view customer</a>
                     </li>  -->
-                    <li class="nav-item @@about__active">
+                    
+                    <!-- <li class="nav-item @@about__active">
                         <a class="nav-link" href="searchcustomer">search customer</a>
-                    </li> 
+                    </li>  -->
                     <li class="nav-item @@about__active">
                         <a class="nav-link" href="viewallcustomer">view all customer</a>
                     </li> 
                     <li class="nav-item @@about__active">
-                        <a class="nav-link" href="">total amounts in bank</a>
+                        <a class="nav-link" href="totalamount">total amounts in bank</a>
                     </li> 
                     <li class="nav-item @@about__active">
                         <a class="nav-link" href="logout">logout</a>
