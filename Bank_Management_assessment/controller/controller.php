@@ -39,6 +39,10 @@ class controller  extends model
                     include_once("views/footer.php");
                     break;
                 case '/viewallcustomer':
+                    $ViewallRes = $this->Select("users",array("role_id"=>"2"));
+                    // echo "<pre>";
+                    // print_r($ViewallRes["Data"][0]);
+                    // echo "</pre>";
                     include_once("views/banker/bankerheader.php");
                     include_once("views/banker/viewallcustomer.php");
               

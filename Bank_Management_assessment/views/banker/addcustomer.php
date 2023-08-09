@@ -50,7 +50,7 @@
         </div>
         <div class="col-md-5 offset-3">
             <label for="adharno" class="form-label">Aadhar No:</label>
-            <input type="tel" minlength="12" maxlength="12" name="adharno" class="form-control" id="adharno" placeholder="Enter Aadhar No">
+            <input type="number" minlength="12" maxlength="12" name="adharno" class="form-control" id="adharno" placeholder="Enter Aadhar No">
         </div>
         <div class="col-md-5 offset-3">
             <label for="profile_pic">profile_pic</label>
@@ -64,9 +64,9 @@
         </div>
 
         <div class="col-md-5 offset-3">
-            <label for="">Account Type:</label>
-            <select name="" id="">
-                <option value="selected"> Select Account Type</option>
+            <label for="accounttype">Account Type:</label>
+            <select name="accounttype" id="accounttype">
+            <option disabled="disabled" selected="selected">Choose option</option>
                 <option value="saving"> Saving Account</option>
                 <option value="current"> Current Account</option>
             </select>
