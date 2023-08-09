@@ -55,7 +55,7 @@
             <div class="col-md-5 offset-3">
                 <label  for="profile_pic">profile_pic</label>
                 <input type="file" class="form-control" id="profile_pic" name="profile_pic">
-                <input type="hidden" class="form-controls" id="profile_pic" name="profile_pic">
+                <!-- <input type="hidden" class="form-controls" id="profile_pic" name="profile_pic"> -->
             </div>
             <div class="col-md-5 offset-3">
                 <label for="address" class="form-label">Address :</label>
@@ -73,11 +73,11 @@
             </div>
             <div class="col-md-5 offset-3">
                 <label for="accountno" class="form-label">Account No:</label>
-                <input type="number" minlength="16" maxlength="16" name="accountno" class="form-control" id="accountno">
+                <input type="tel" minlength="16" maxlength="16"  name="accountno" class="form-control" id="accountno">
             </div>
             <div class="col-md-5 offset-3">
                 <label for="openingbal" class="form-label">Opening Balance:</label>
-                <input type="number" name="openingbal" class="form-control" id="openingbal">
+                <input type="tel" name="openingbal" class="form-control" id="openingbal">
             </div>
 
 
