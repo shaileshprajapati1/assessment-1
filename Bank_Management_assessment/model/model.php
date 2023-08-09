@@ -82,6 +82,36 @@ class model
         }
         return $ResponceData;
     }
+    public function Amount($tbl, $where)
+    {//SELECT  SUM(cost) from food;
+       
+        $SQL = " SELECT SUM(openingbal) FROM $tbl WHERE ";
+        foreach ($where as $key => $value) {
+            $SQL .= " $key = '$value ' AND";
+        }
+        $SQL = rtrim($SQL, "AND");
+        // echo $SQL;
+        $SQLEx = $this->connection->query($SQL);
+        // print_r($SQLEx);
+        if ($SQLEx->num_rows > 0) {
+            while ($data = $SQLEx->fetch_object()) {
+              $FetchData['openingbal'] = $data;
+            }
+            // echo "<pre>";
+            // print_r($FetchData);
+            // echo "</pre>";
+            // $FetchData = $SQLEx->fetch_object();
+
+            $ResponceData['Code'] = "1";
+            $ResponceData['Mag'] = "Success";
+            $ResponceData['Data'] = $FetchData;
+        } else {
+            $ResponceData['Code'] = "0";
+            $ResponceData['Mag'] = "Try Again";
+            $ResponceData['Data'] = "0";
+        }
+        return $ResponceData;
+    }
     // public function Update(){
     //     $SQL = "";
     //     $SQLEx = "" ;
