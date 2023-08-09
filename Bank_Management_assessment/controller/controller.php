@@ -38,16 +38,72 @@ class controller  extends model
                     include_once("views/homepage.php");
                     include_once("views/footer.php");
                     break;
+                case '/viewallcustomer':
+                    include_once("views/banker/bankerheader.php");
+                    include_once("views/banker/viewallcustomer.php");
+              
+                   
+                    break;
                 case '/addcustomer':
                     // include_once("views/banker/bankerheader.php");
                     include_once("views/banker/addcustomer.php");
-                    if(isset($_POST['add'])){
-                        echo "<pre>";
-                        print_r($_POST);
-                        print_r($_FILES);
-                        echo "</pre>";
-                        
+                    if (isset($_POST['add'])) {
+                        array_pop($_POST);
+                        $targetDirectory = "uploads/"; // Specify the directory where you want to store uploaded files
+                        $targetFile = $targetDirectory . basename($_FILES["profile_pic"]["name"]);
+                        $uploadOk = 1;
+                        $fileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 
+                        // Check if the file is a valid image
+                        if (isset($_POST["submit"])) {
+                            $check = getimagesize($_FILES["profile_pic"]["tmp_name"]);
+                            if ($check !== false) {
+                                echo "File is an image - " . $check["mime"] . ".";
+                                $uploadOk = 1;
+                            } else {
+                                echo "File is not an image.";
+                                $uploadOk = 0;
+                            }
+                        }
+
+                        // Check if the file already exists
+                        if (file_exists($targetFile)) {
+                            echo "Sorry, the file already exists.";
+                            $uploadOk = 0;
+                        }
+
+                        // Check the file size (optional)
+                        // if ($_FILES["profile_pic"]["size"] > 50000) {
+                        //     echo "Sorry, your file is too large.";
+                        //     $uploadOk = 0;
+                        // }
+
+                        // Allow only specific file formats (optional)
+                        $allowedFormats = array("jpg", "jpeg", "png", "gif");
+                        if (!in_array($fileType, $allowedFormats)) {
+                            echo "Sorry, only JPG, JPEG, PNG, and GIF files are allowed.";
+                            $uploadOk = 0;
+                        }
+
+                        // Check if $uploadOk is set to 0 by an error
+                        if ($uploadOk == 0) {
+                            echo "Sorry, your file was not uploaded.";
+                        } else {
+                            if (move_uploaded_file($_FILES["profile_pic"]["tmp_name"], $targetFile)) {
+                                echo "The file " . basename($_FILES["profile_pic"]["name"]) . " has been uploaded.";
+                            } else {
+                                echo "Sorry, there was an error uploading your file.";
+                            }
+                        }
+                        $data = array_merge($_POST, array("profile_pic" => $targetFile));
+                        // echo "<pre>";
+                        // print_r($data);
+                        // // print_r($_FILES);
+                        // echo "</pre>";
+                        $InsertRes = $this->Insert("users", $data);
+                        if ($InsertRes["Code"] == 1) {
+                            header("location:viewallcustomer");
+                        }
                     }
 
                     break;

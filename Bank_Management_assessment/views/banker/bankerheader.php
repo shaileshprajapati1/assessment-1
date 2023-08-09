@@ -26,7 +26,7 @@ if(!isset($_SESSION['userdata'])){
     <header class="absolute-top">
         <div class="container-fluid pr-lg-0">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <h1><a class="navbar-brand" href="home"><span class="fa fa-university mr-1" aria-hidden="true"></span>Easy cash</a></h1>
+            <h1><a class="navbar-brand" href="banker"><span class="fa fa-university mr-1" aria-hidden="true"></span>Easy cash</a></h1>
             <button class="navbar-toggler bg-gradient collapsed" type="button" data-toggle="collapse"
                 data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -37,19 +37,19 @@ if(!isset($_SESSION['userdata'])){
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="banker">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item @@about__active">
                         <a class="nav-link" href="addcustomer">add customer</a>
                     </li> 
-                    <li class="nav-item @@about__active">
+                    <!-- <li class="nav-item @@about__active">
                         <a class="nav-link" href="">view customer</a>
-                    </li> 
+                    </li>  -->
                     <li class="nav-item @@about__active">
                         <a class="nav-link" href="">search customer</a>
                     </li> 
                     <li class="nav-item @@about__active">
-                        <a class="nav-link" href="">view all customer</a>
+                        <a class="nav-link" href="viewallcustomer">view all customer</a>
                     </li> 
                     <li class="nav-item @@about__active">
                         <a class="nav-link" href="">total amounts in bank</a>
