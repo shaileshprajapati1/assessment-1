@@ -46,7 +46,7 @@ if(!isset($_SESSION['userdata'])){
                         <a class="nav-link" href="">Diposite Amount</a>
                     </li> 
                     <li class="nav-item @@about__active">
-                        <a class="nav-link" href="">View Balance</a>
+                        <a class="nav-link" href="viewbalance">View Balance</a>
                     </li> 
                     <li class="nav-item @@about__active">
                         <a class="nav-link" href="logout">logout</a>

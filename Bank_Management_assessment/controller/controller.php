@@ -54,6 +54,26 @@ class controller  extends model
                     include_once("views/banker/totalamount.php");
 
                     break;
+                case '/withdrawamount':
+                    include_once("views/customer/customerheader.php");
+                    include_once("views/customer/withdrawamount.php");
+
+                    break;
+                case '/viewbalance':
+                    if(isset($_POST['view'])){
+                        array_pop($_POST);
+                        // echo "<pre>";
+                        // print_r($_POST);
+                        // echo "</pre>";
+                        $ViewallRes = $this->Select("users", array("role_id" => "2","accountno"=>$_REQUEST['accountno']));
+                    }
+                    // echo "<pre>";
+                    // print_r($ViewallRes["Data"][0]);
+                    // echo "</pre>";
+                    include_once("views/customer/customerheader.php");
+                    include_once("views/customer/viewbalance.php");
+
+                    break;
                 case '/delete':
                     $DeleteRes = $this->Delete("users",array("id"=>$_GET['userid'],"role_id"=>"2"));
                     if($DeleteRes["Code"] == 1){
