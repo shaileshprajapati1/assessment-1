@@ -54,23 +54,58 @@ class controller  extends model
                     include_once("views/banker/totalamount.php");
 
                     break;
+                case '/delete':
+                    $DeleteRes = $this->Delete("users",array("id"=>$_GET['userid'],"role_id"=>"2"));
+                    if($DeleteRes["Code"] == 1){
+                       header("location:viewallcustomer");
+                    }
+
+                    break;
                 case '/edit':
                     $EditRes = $this->Select("users", array("role_id" => "2", "id" => $_GET['userid']));
                     include_once("views/banker/editcustomer.php");
                     if (isset($_POST['update'])) {
                         array_pop($_POST);
-                        echo "<pre>";
-                        print_r($_FILES);
-                        echo "</pre>";
-                        $data = $_POST;
+                        $errors     = array();
+                        $maxsize    = 2097152;
+                        $acceptable = array(
+                            'application/pdf',
+                            'image/jpeg',
+                            'image/jpg',
+                            'image/gif',
+                            'image/png'
+                        );
+                        if ($_FILES['profile_pic']['error'] == 0) {
+
+                            if (!in_array($_FILES['profile_pic']['type'], $acceptable) && (!empty($_FILES["profile_pic"]["type"]))) {
+                                $errors[] = 'Invalid file type. Only PDF, JPG, GIF and PNG types are accepted.';
+                                $fileName = "Default.jpg";
+                            } else {
+                                if (($_FILES['profile_pic']['size'] >= $maxsize) || ($_FILES["profile_pic"]["size"] == 0)) {
+                                    $errors[] = 'File too large. File must be less than 2 megabytes.';
+                                    $fileName = "Default.jpg";
+                                } else {
+                                    $fileName = $_FILES['profile_pic']['name'];
+                                    $uploadfile = "uploads/" . $fileName;
+                                    $UploadedImage = move_uploaded_file($_FILES['profile_pic']['tmp_name'], $uploadfile);
+                                }
+                            }
+                        } else {
+                            $fileName = $_REQUEST['old_profile_pic'];
+                        }
+                        unset($_POST["old_profile_pic"]);
+                        $data =array_merge($_POST,array("profile_pic"=>$fileName)) ;
+                        // echo "<pre>";
+                        // print_r($data);
+                        // echo "</pre>";
 
                         $UpdateRes = $this->Update("users", $data, array("id" => $_GET['userid']));
                         // echo "<pre>";
                         // print_r($UpdateRes);
                         // echo "</pre>";
-                        // if($UpdateRes['Code'] == 1){
-                        //     header("location:viewallcustomer");
-                        // }
+                        if($UpdateRes['Code'] == 1){
+                            header("location:viewallcustomer");
+                        }
 
                     }
 

@@ -50,7 +50,7 @@
         </div>
         <div class="col-md-5 offset-3">
             <label for="adharno" class="form-label">Aadhar No:</label>
-            <input type="number" minlength="12" maxlength="12" name="adharno" class="form-control" id="adharno" placeholder="Enter Aadhar No">
+            <input type="text" minlength="12" maxlength="12" name="adharno" class="form-control" id="adharno" placeholder="Enter Aadhar No">
         </div>
         <div class="col-md-5 offset-3">
             <label for="profile_pic">profile_pic</label>
@@ -77,7 +77,7 @@
         </div>
         <div class="col-md-5 offset-3">
             <label for="openingbal" class="form-label">Opening Balance:</label>
-            <input type="tel" name="openingbal" class="form-control" id="openingbal">
+            <input type="text" name="openingbal" class="form-control" id="openingbal">
         </div>
 
 

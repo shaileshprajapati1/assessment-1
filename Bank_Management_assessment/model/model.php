@@ -130,7 +130,7 @@ class model
         $SQLEx = $this->connection->query($SQL);
         // print_r($SQLEx);
         if ($SQLEx > 0) {
-           
+
             $ResponceData['Code'] = "1";
             $ResponceData['Mag'] = "Success";
             $ResponceData['Data'] = "1";
@@ -141,9 +141,25 @@ class model
         }
         return $ResponceData;
     }
-    // public function Delete(){
-    //     $SQL = "";
-    //     $SQLEx = "" ;
-    // }
+    public function Delete($tbl, $where)
+    {
+        $SQL = " DELETE FROM $tbl WHERE ";
+        foreach ($where as $key => $value) {
+            $SQL .= " $key = $value  AND";
+        }
+        $SQL = rtrim($SQL,"AND");
+        // echo $SQL;
+        $SQLEx = $this->connection->query($SQL) ;
+        if ($SQLEx > 0) {
 
+            $ResponceData['Code'] = "1";
+            $ResponceData['Mag'] = "Success";
+            $ResponceData['Data'] = "1";
+        } else {
+            $ResponceData['Code'] = "0";
+            $ResponceData['Mag'] = "Try Again";
+            $ResponceData['Data'] = "0";
+        }
+        return $ResponceData;
+    }
 }

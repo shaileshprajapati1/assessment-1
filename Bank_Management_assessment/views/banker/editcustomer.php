@@ -56,7 +56,7 @@
             <label for="profile_pic">profile_pic</label>
             <img src="uploads/<?php echo $EditRes["Data"][0]->profile_pic ; ?>" alt="" width="100px">
             <input type="file" class="form-control" id="" name="profile_pic">
-            <!-- <input type="hidden" class="form-controls" id="profile_pic" name="profile_pic"> -->
+            <input type="hidden" value="<?php echo $EditRes["Data"][0]->profile_pic ; ?>" id="old_profile_pic" name="old_profile_pic">
         </div>
         <div class="col-md-5 offset-3">
             <label for="address" class="form-label">Address :</label>

@@ -113,7 +113,7 @@
 		<h3>You can achieve your financial goals</h3>
 	<p class="para mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit inventore deleniti dolore sequi labore similique vitae .inventore deleniti dolore sequi labore similique vitae quae est.</p>
 	<p class="para mb-3">Cum quo maiores asperiores sequi error alias mollitia? Voluptatibus impedit aliquid pr Lorem ipsum dolor sit amet consectetur adipisicing elit.inventore deleniti dolore sequi labore similique vitae quae est.</p>
-	<a href="about.html" class="action-button btn mt-3">Read more</a>
+	<a href="about" class="action-button btn mt-3">Read more</a>
 </div>
 <div class="col-lg-6 ">
 	<img src=" <?php echo $this->baseURL ; ?>assets/images/b4.jpg" alt="product" class="img-responsive about-me">

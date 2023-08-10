@@ -60,7 +60,7 @@
                             Account updater</a></h5>
                         <p class="para editContent">Sit amet consect etur adipi sicing elit. Rem quib usdam corporis, dolores
                             quos, nobis culpa est</p>
-                            <a href="about.html" class="action-button btn mt-3">Read more</a>
+                            <a href="about" class="action-button btn mt-3">Read more</a>
                    
                 </div>
                 </div>
@@ -70,7 +70,7 @@
                         <h5><a href="#page" class="editContent">Simple checkout</a></h5>
                         <p class="para editContent">Sit amet consect etur adipi sicing elit. Rem quib usdam corporis, dolores
                             quos, nobis culpa est </p>
-                            <a href="about.html" class="action-button btn mt-3">Read more</a>
+                            <a href="about" class="action-button btn mt-3">Read more</a>
                 </div>
                 </div>
                 <div class="col-lg-4 col-md-6 propClone about-line-top ">
@@ -79,7 +79,7 @@
                         <h5><a href="#page" class="editContent">Payment invoice</a></h5>
                         <p class="para editContent">Sit amet consect etur adipi sicing elit. Rem quib usdam corporis, dolores
                         quos, nobis culpa est</p>
-                         <a href="about.html" class="action-button btn mt-3">Read more</a>
+                         <a href="about" class="action-button btn mt-3">Read more</a>
                 </div>
                 </div>
             </div>
