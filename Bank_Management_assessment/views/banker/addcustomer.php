@@ -77,7 +77,7 @@
         </div>
         <div class="col-md-5 offset-3">
             <label for="openingbal" class="form-label">Opening Balance:</label>
-            <input type="text" name="openingbal" class="form-control" id="openingbal">
+            <input type="number" name="openingbal" class="form-control" id="openingbal">
         </div>
 
 
