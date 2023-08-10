@@ -68,7 +68,7 @@ class model
         // print_r($SQLEx);
         if ($SQLEx->num_rows > 0) {
             while ($data = $SQLEx->fetch_object()) {
-              $FetchData[] = $data;
+                $FetchData[] = $data;
             }
             // $FetchData = $SQLEx->fetch_object();
 
@@ -83,8 +83,8 @@ class model
         return $ResponceData;
     }
     public function Amount($tbl, $where)
-    {//SELECT  SUM(cost) from food;
-       
+    { //SELECT  SUM(cost) from food;
+
         $SQL = " SELECT SUM(openingbal) FROM $tbl WHERE ";
         foreach ($where as $key => $value) {
             $SQL .= " $key = '$value ' AND";
@@ -95,7 +95,7 @@ class model
         // print_r($SQLEx);
         if ($SQLEx->num_rows > 0) {
             while ($data = $SQLEx->fetch_object()) {
-              $FetchData['openingbal'] = $data;
+                $FetchData['openingbal'] = $data;
             }
             // echo "<pre>";
             // print_r($FetchData);
@@ -112,10 +112,35 @@ class model
         }
         return $ResponceData;
     }
-    // public function Update(){
-    //     $SQL = "";
-    //     $SQLEx = "" ;
-    // }
+    public function Update($tbl, $clm, $where)
+    {
+        $SQL = " UPDATE $tbl SET ";
+
+        foreach ($clm as $key => $value) {
+            $SQL .= "$key = '$value' ,";
+        }
+        $SQL = rtrim($SQL, ",");
+        $SQL .= " WHERE";
+
+        foreach ($where as $key => $value) {
+            $SQL .= " $key = $value AND";
+        }
+        $SQL = rtrim($SQL, "AND");
+        // echo $SQL;
+        $SQLEx = $this->connection->query($SQL);
+        // print_r($SQLEx);
+        if ($SQLEx > 0) {
+           
+            $ResponceData['Code'] = "1";
+            $ResponceData['Mag'] = "Success";
+            $ResponceData['Data'] = "1";
+        } else {
+            $ResponceData['Code'] = "0";
+            $ResponceData['Mag'] = "Try Again";
+            $ResponceData['Data'] = "0";
+        }
+        return $ResponceData;
+    }
     // public function Delete(){
     //     $SQL = "";
     //     $SQLEx = "" ;

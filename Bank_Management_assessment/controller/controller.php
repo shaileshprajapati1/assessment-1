@@ -50,22 +50,28 @@ class controller  extends model
                     break;
                 case '/totalamount':
                     $AmountRes = $this->Amount("users", array("role_id" => "2"));
-                    // echo "<pre>";
-                    // print_r($AmountRes);
-                    // echo "</pre>";
                     include_once("views/banker/bankerheader.php");
                     include_once("views/banker/totalamount.php");
 
                     break;
                 case '/edit':
-                    $EditRes = $this->Select("users",array("role_id"=> "2","id"=>$_GET['userid']));
+                    $EditRes = $this->Select("users", array("role_id" => "2", "id" => $_GET['userid']));
                     include_once("views/banker/editcustomer.php");
-                    if(isset($_POST['update'])){
+                    if (isset($_POST['update'])) {
                         array_pop($_POST);
                         echo "<pre>";
-                        print_r($_POST);
+                        print_r($_FILES);
                         echo "</pre>";
-                        
+                        $data = $_POST;
+
+                        $UpdateRes = $this->Update("users", $data, array("id" => $_GET['userid']));
+                        // echo "<pre>";
+                        // print_r($UpdateRes);
+                        // echo "</pre>";
+                        // if($UpdateRes['Code'] == 1){
+                        //     header("location:viewallcustomer");
+                        // }
+
                     }
 
                     break;
@@ -77,21 +83,21 @@ class controller  extends model
                         array_pop($_POST);
                         // $targetDirectory = "uploads/"; // Specify the directory where you want to store uploaded files
                         $fileName = $_FILES["profile_pic"]["name"];
-                        $targetFile = "uploads/".$fileName;
+                        $targetFile = "uploads/" . $fileName;
                         $uploadOk = 1;
                         $fileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 
                         // Check if the file is a valid image
-                        if (isset($_POST["submit"])) {
-                            $check = getimagesize($_FILES["profile_pic"]["tmp_name"]);
-                            if ($check !== false) {
-                                echo "File is an image - " . $check["mime"] . ".";
-                                $uploadOk = 1;
-                            } else {
-                                echo "File is not an image.";
-                                $uploadOk = 0;
-                            }
+
+                        $check = getimagesize($_FILES["profile_pic"]["tmp_name"]);
+                        if ($check !== false) {
+                            echo "File is an image - " . $check["mime"] . ".";
+                            $uploadOk = 1;
+                        } else {
+                            echo "File is not an image.";
+                            $uploadOk = 0;
                         }
+
 
                         // Check if the file already exists
                         if (file_exists($targetFile)) {
@@ -117,7 +123,7 @@ class controller  extends model
                             echo "Sorry, your file was not uploaded.";
                         } else {
                             if (move_uploaded_file($_FILES["profile_pic"]["tmp_name"], $targetFile)) {
-                                echo "The file " .($_FILES["profile_pic"]["name"]) . " has been uploaded.";
+                                echo "The file " . ($_FILES["profile_pic"]["name"]) . " has been uploaded.";
                             } else {
                                 echo "Sorry, there was an error uploading your file.";
                             }

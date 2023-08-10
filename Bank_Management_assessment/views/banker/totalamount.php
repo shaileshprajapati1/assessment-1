@@ -17,6 +17,7 @@
         <table class="table table-hover">
             <thead>
                 <tr>
+                    <th scope="col">Description</th>
                     <th scope="col">Total Amount</th>
 
                 </tr>
