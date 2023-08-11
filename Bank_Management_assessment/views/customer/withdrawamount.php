@@ -1,3 +1,4 @@
+<?php error_reporting(0); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +31,7 @@
                 <th>
                     <div class="col-12">
                         <label for="">Withdraw Amount:</label>
-                        <input type="text" class="form-control" name="accountno" id="accountno" required><br>
+                        <input type="text" class="form-control" name="wamount" id="wamount" required><br>
                     </div>
                 </th>
             </tr>
@@ -47,6 +48,19 @@
 
 
         </thead>
+    </table>
+    <table>
+        <thead>
+
+            <tr>
+                <th> Avilable Balance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b><?php echo $openingBal; ?>Rs</b></td>
+            </tr>
+        </tbody>
     </table>
 </body>
 

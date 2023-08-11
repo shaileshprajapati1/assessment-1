@@ -55,6 +55,27 @@ class controller  extends model
 
                     break;
                 case '/withdrawamount':
+                    if(isset($_POST['withdraw'])){
+                        array_pop($_POST);
+                        // echo "<pre>";
+                        // print_r($_POST);
+                        // echo "</pre>";
+                        // $data = $_POST;
+                        $WithdrawResAmount = $this->Select("users", array("role_id" => "2"));
+                        // echo "<pre>";
+                        // print_r($WithdrawResAmount["Data"][0]->openingbal);
+                        // echo "</pre>";
+                        $openingBal = $WithdrawResAmount["Data"][0]->openingbal;
+                        $Wamount = $_REQUEST['wamount'];
+                        if($openingBal >= $Wamount){
+                            $WithdrawRes = $this->Update("users",array("openingbal"=>$openingBal  = $openingBal - $Wamount ),array("accountno"=>$_REQUEST['accountno']));
+
+                        } else {
+                            echo "<script>
+                            alert('Insufficient amount');
+                            </script>";
+                        }
+                    }
                     include_once("views/customer/customerheader.php");
                     include_once("views/customer/withdrawamount.php");
 
@@ -65,8 +86,8 @@ class controller  extends model
                         // echo "<pre>";
                         // print_r($_POST);
                         // echo "</pre>";
+                        $ViewallRes = $this->Select("users", array("role_id" => "2","accountno"=>$_REQUEST['accountno']));
                     }
-                    $ViewallRes = $this->Select("users", array("role_id" => "2","accountno"=>$_REQUEST['accountno']));
                     // echo "<pre>";
                     // print_r($ViewallRes["Data"][0]);
                     // echo "</pre>";

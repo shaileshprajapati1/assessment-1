@@ -147,9 +147,9 @@ class model
         foreach ($where as $key => $value) {
             $SQL .= " $key = $value  AND";
         }
-        $SQL = rtrim($SQL,"AND");
+        $SQL = rtrim($SQL, "AND");
         // echo $SQL;
-        $SQLEx = $this->connection->query($SQL) ;
+        $SQLEx = $this->connection->query($SQL);
         if ($SQLEx > 0) {
 
             $ResponceData['Code'] = "1";
@@ -162,8 +162,5 @@ class model
         }
         return $ResponceData;
     }
+    
 }
-// UPDATE accounts
-// SET balance = balance - withdrawal_amount
-// WHERE account_number = account_to_withdraw
-//     AND balance >= withdrawal_amount;
