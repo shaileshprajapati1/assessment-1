@@ -49,7 +49,7 @@ class controller  extends model
 
                     break;
                 case '/totalamount':
-                    $AmountRes = $this->Amount("users", array("role_id" => "2"));
+                    $AmountRes = $this->Amount("users",array("role_id" => "2"));
                     include_once("views/banker/bankerheader.php");
                     include_once("views/banker/totalamount.php");
 
@@ -65,8 +65,8 @@ class controller  extends model
                         // echo "<pre>";
                         // print_r($_POST);
                         // echo "</pre>";
-                        $ViewallRes = $this->Select("users", array("role_id" => "2","accountno"=>$_REQUEST['accountno']));
                     }
+                    $ViewallRes = $this->Select("users", array("role_id" => "2","accountno"=>$_REQUEST['accountno']));
                     // echo "<pre>";
                     // print_r($ViewallRes["Data"][0]);
                     // echo "</pre>";

@@ -163,3 +163,7 @@ class model
         return $ResponceData;
     }
 }
+// UPDATE accounts
+// SET balance = balance - withdrawal_amount
+// WHERE account_number = account_to_withdraw
+//     AND balance >= withdrawal_amount;
