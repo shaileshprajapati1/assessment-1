@@ -80,6 +80,29 @@ class controller  extends model
                     include_once("views/customer/withdrawamount.php");
 
                     break;
+                case '/depositeamount':
+                    if(isset($_POST['deposite'])){
+                        array_pop($_POST);
+                        // echo "<pre>";
+                        // print_r($_POST);
+                        // echo "</pre>";
+                        // $data = $_POST;
+                        $DepositeAmountRes = $this->Select("users", array("role_id" => "2"));
+                        // echo "<pre>";
+                        // print_r($DepositeAmountRes);
+                        // echo "</pre>";
+                        $openingBal = $DepositeAmountRes["Data"][0]->openingbal;
+                        $Damount = $_REQUEST['damount'];
+                        if($DepositeAmountRes["Code"] ==1 ){
+                            $DepositeRes = $this->Update("users",array("openingbal"=>$openingBal  = $openingBal + $Damount ),array("accountno"=>$_REQUEST['accountno']));
+                           
+                        } 
+
+                    }
+                    include_once("views/customer/customerheader.php");
+                    include_once("views/customer/depositeamount.php");
+
+                    break;
                 case '/viewbalance':
                     if(isset($_POST['view'])){
                         array_pop($_POST);
